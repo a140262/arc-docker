@@ -108,7 +108,8 @@ RUN cd /tmp && \
   org.apache.hadoop:hadoop-azure:${HADOOP_VERSION} \
   org.postgresql:postgresql:42.2.8 \
   com.oracle.ojdbc:ojdbc8:19.3.0.0 \
-  io.delta:delta-core_${SCALA_VERSION}:0.4.0
+  io.delta:delta-core_${SCALA_VERSION}:0.4.0 \
+  com.syncron.amazonaws:simba-athena-jdbc-driver:2.0.2
 
 # move the jars to the spark/jars path for easy resolution
 # also copy local ones for development
@@ -148,6 +149,7 @@ RUN cd /tmp && \
   org.apache.hadoop:hadoop-azure:${HADOOP_VERSION} \
   org.postgresql:postgresql:42.2.8 \
   com.oracle.ojdbc:ojdbc8:19.3.0.0 \
+  com.syncron.amazonaws:simba-athena-jdbc-driver:2.0.2 \
   -o arc && \
   ./arc --install --force && \
   rm /tmp/arc && \
